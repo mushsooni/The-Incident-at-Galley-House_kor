@@ -1,6 +1,6 @@
 # The Incident at Galley House 한글패치 (베타 버전)
 - 스팀 게임 **The Incident at Galley House** (갤리 저택 사건)의 유저 한글패치입니다.  
-- AI 번역본으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고하시기 바랍니다.
+- AI 번역본으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고 바랍니다.
 
 ### 다운로드
 https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest/Galley-House_KO_v0.1.zip
@@ -9,13 +9,13 @@ https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest/Ga
 1. 압축을 풀고, `galleyhouse.pck` 파일을 게임 폴더에 **덮어쓰기**  
    (게임 폴더: 스팀 라이브러리 - 게임명 우클릭 - `관리` - `로컬 파일 탐색`)
 2. 게임 실행 후 `Settings` - `language`를 `한국어`로 변경
-3. 게임의 안내에 따라 설정 적용 후 게임을 **재실행**하면 한국어가 적용됩니다.
+3. 게임의 안내에 따라 설정 적용 후 **게임 재실행**
 
 ### 게임 원본 빌드
 - **기준일**: 2026-07-16 03:17:06 KST (한국시간)
 - **App ID**: 3641000 / **Depot ID**: 3641001 / **Build ID**: 24225541 / **Manifest ID**: 6371651764234393936
 - **SteamDB**: https://steamdb.info/depot/3641001/history/?changeid=M:6371651764234393936
-- **롤백 명령어** : `download_depot 3641000 3641001 6371651764234393936`
+- **버전 롤백 명령어** : `download_depot 3641000 3641001 6371651764234393936`
 
 ### 주요 안내 사항
 - 본 패치는 **윈도우** 버전 게임을 기준으로 제작되었습니다.
