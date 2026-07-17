@@ -1,5 +1,5 @@
 # The Incident at Galley House 한글패치 (베타 버전)
-- **The Incident at Galley House** (갤리 저택 사건)의 유저 한글패치입니다.  
+- 스팀 게임 **The Incident at Galley House** (갤리 저택 사건)의 유저 한글패치입니다.  
 - AI 번역본으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고하시기 바랍니다.
 
 ### 다운로드
@@ -45,7 +45,11 @@ https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest/Ga
 
 ### 사용된 폰트
 
-**KCC방정환체** (변형)  
+**Noto Serif Korean** (SemiBold)  
+Copyright 2012 Google Inc. All Rights Reserved.  
+https://fonts.google.com/noto/specimen/Noto+Serif+KR
+
+**KCC방정환체**  
 https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023
 
 **전기안전체** (Medium)  
