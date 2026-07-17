@@ -30,7 +30,7 @@ https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/
 - 수첩에서 한글 입력 중 다른 위치를 클릭 시 입력 중인 글자가 이동하는 버그가 있습니다. 해당 이슈는 현재 수정 계획이 없습니다.
 
 ### 문의, 제보
-- **배포 안내글**: (미등록)
+- **배포 안내글**: https://gall.dcinside.com/indiegame/448576
 - **깃허브 이슈**: https://github.com/mushsooni/The-Incident-at-Galley-House_kor/issues/new/choose
 
 ### 패치 제작
