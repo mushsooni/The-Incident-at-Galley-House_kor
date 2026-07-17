@@ -3,7 +3,7 @@
 - AI 번역본으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고 바랍니다.
 
 ### 다운로드
-https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest/Galley-House_KO_v0.1.zip
+https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/v0.1/Galley-House_KO_v0.1.zip
 
 ### 패치 방법
 1. 압축을 풀고, `galleyhouse.pck` 파일을 게임 폴더에 **덮어쓰기**  
