@@ -51,7 +51,7 @@ https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/
 - **Erica Noh** ([*Type Help*](https://william-rous.itch.io/type-help) 번역)  
 원작의 한국어 번역을 많이 참고하였습니다. 멋진 게임을 한국어로 소개해주셔서 정말 감사합니다.
 - [**Snowyegret**](https://github.com/snowyegret23)  
-IME와 드래그 관련 버그의 트리거를 찾고 해결 방법과 수정 코드를 제공해주셨습니다. 진심으로 감사드립니다.
+IME와 엔터키 관련 버그의 트리거를 찾고 해결 방법과 수정 코드를 제공해주셨습니다. 진심으로 감사드립니다.
 
 ### 업데이트 내역
 - 2026-07-17 [v0.1] **베타 버전 공개**: 모든 폰트에 개별 폴백 폰트 적용, 어절 단위 줄바꿈 적용, 영어 이미지 적용, 영어 이미치 출력 코드 적용
