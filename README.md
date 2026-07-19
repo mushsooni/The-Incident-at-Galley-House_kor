@@ -33,7 +33,7 @@ https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/
 - **3번** 이슈는 게임 자체의 버그로 추정됩니다. 해당 이슈는 본 패치에서는 수정 계획이 없으니 양해 바랍니다.
 
 ### 게임 원본 빌드
-- **기준일**: 2026-07-17 23:02:19 KST (한국시간)
+- **기준일**: 18 July 2026 – 15:54:05 UTC (한국시간 2026-07-19 00:54:05)
 - **App ID**: 3641000 / **Depot ID**: 3641001 / **Build ID**: 24275135 / **Manifest ID**: 2388715992132582000
 - **SteamDB**: https://steamdb.info/depot/3641001/history/?changeid=M:2388715992132582000
 - **버전 롤백 명령어** : `download_depot 3641000 3641001 2388715992132582000`
