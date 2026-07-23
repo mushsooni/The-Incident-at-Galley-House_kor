@@ -4,7 +4,7 @@
 
 ### 다운로드
 https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/v0.4.1/Galley-House_KO_v0.4.1.zip  
-(릴리즈: 26-07-23 17:40)
+(릴리즈: 26-07-23 18:00)
 
 ### 패치 방법
 1. 압축을 풀고, `galleyhouse.pck` 파일을 게임 폴더에 **덮어쓰기**  
