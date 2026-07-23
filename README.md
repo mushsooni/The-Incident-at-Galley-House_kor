@@ -82,6 +82,7 @@ https://www.gp.go.kr/portal/contents.do?key=2410
 https://s-core.co.kr/company/font2/
 
 **Galmuri7**  
+© 2019–2025 Lee Minseo (quiple​@​quiple​.​dev)  
 https://quiple.dev/font/galmuri
 
 **조선궁서체**  
