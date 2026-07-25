@@ -3,8 +3,8 @@
 - AI 번역본으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고 바랍니다.
 
 ### 다운로드
-https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/v0.4.1/Galley-House_KO_v0.4.1.zip  
-(릴리즈: 26-07-23 18:00)
+https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/download/v0.4.2/Galley-House_KO_v0.4.2.zip  
+(릴리즈: 26-07-25 20:00)
 
 ### 패치 방법
 1. 압축을 풀고, `galleyhouse.pck` 파일을 게임 폴더에 **덮어쓰기**  
@@ -52,6 +52,7 @@ IME와 엔터키 관련 버그의 트리거를 찾고 해결 방법과 수정 �
 - 2026-07-19 [v0.3] 게임 업데이트 대응, [person] 및 %s 태그 뒤 한국어 조사 자동 변환
 - 2026-07-21 [v0.4] 게임 업데이트 대응, 게임 타이틀 등 일부 이미지 한글화, UI 및 튜토리얼 일부 번역 검수
 - 2026-07-23 [v0.4.1] 이미지 다수 한글화, 튜토리얼 번역 검수, 일부 용어 수정
+- 2026-07-25 [v0.4.2] 초반 장면 번역 검수, 용어 및 인물 간 말투 일부 수정, 이미지 다수 한글화
 
 자세한 변경 사항 및 진행도는 [Releases](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases)를 참고 바랍니다.
 
@@ -80,32 +81,26 @@ https://www.dxkorea.co.kr/main/html.php?htmid=/service/freefont.html
 본 패치의 텍스처 에셋 중 일부는 가평한석봉 큰붓B를 사용하여 제작되었습니다.  
 https://www.gp.go.kr/portal/contents.do?key=2410
 
-**에스코어 드림** (8 Heavy)  
-https://s-core.co.kr/company/font2/
-
-**Galmuri7**  
-© 2019–2025 Lee Minseo (quiple​@​quiple​.​dev)  
-https://quiple.dev/font/galmuri
-
-**조선궁서체**  
-https://event.chosun.com/100/100font.html
+**굵은둥근모**  
+https://github.com/sawalk/Korean-Font-Change/releases/tag/Bold-v0.2
 
 **그리운 옥수니 손글씨**  
 https://www.griun.co.kr/fonts/oksooni
 
-**Noto Sans Korean** (Bold)  
-Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'  
-https://fonts.google.com/noto/specimen/Noto+Sans+KR
+**에스코어 드림** (8 Heavy)  
+https://s-core.co.kr/company/font2/
 
-**카페24 PRO Slim Fit**  
-https://fonts.cafe24.com/
+**영월체**  
+https://www.yw.go.kr/www/contents.do?key=1500
 
 **인천교육힘찬체**  
 https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943
 
-**LAB디지털**  
-https://fontlab.kr/notice/?uid=11&mod=document  
-https://fontlab.kr/notice/?uid=9&mod=document
+**조선궁서체**  
+https://event.chosun.com/100/100font.html
+
+**카페24 PRO Slim Fit**  
+https://fonts.cafe24.com/
 
 **DX일급비밀** (Medium)  
 https://www.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000245&pageNm=font  
@@ -114,6 +109,18 @@ https://www.dxkorea.co.kr/main/html.php?htmid=/service/freefont.html
 **DX활판명조** (Medium, Bold)  
 https://www.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000042&pageNm=font  
 https://www.dxkorea.co.kr/main/html.php?htmid=/service/freefont.html
+
+**Galmuri7**  
+© 2019–2025 Lee Minseo (quiple​@​quiple​.​dev)  
+https://quiple.dev/font/galmuri
+
+**LAB디지털**  
+https://fontlab.kr/notice/?uid=11&mod=document  
+https://fontlab.kr/notice/?uid=9&mod=document
+
+**Noto Sans Korean** (Bold)  
+Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'  
+https://fonts.google.com/noto/specimen/Noto+Sans+KR
 
 ### 기타 안내 사항
 - 본 패치는 원작자의 허가 하에 제작되었으며, 제작사/유통사의 요청이 있을 경우 언제든 내려갈 수 있습니다.
