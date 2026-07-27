@@ -19,7 +19,7 @@
 
 namespace
 {
-constexpr std::wstring_view Version = L"1.0.0";
+constexpr std::wstring_view Version = L"1.0.0.1";
 constexpr std::wstring_view ProductName = L"GalleyHouse IME EXE Patcher";
 constexpr std::wstring_view TargetName = L"galleyhouse.exe";
 constexpr std::wstring_view BackupName = L"galleyhouse.exe.backup";
@@ -534,102 +534,28 @@ void ensure_backup(
     }
 }
 
-std::filesystem::path create_patched_file(
-    const std::filesystem::path& source,
-    const std::filesystem::path& directory)
+void patch_in_place(const std::filesystem::path& target)
 {
-    std::vector<wchar_t> temporary_buffer(MAX_PATH);
-    if (GetTempFileNameW(directory.c_str(), L"GHI", 0, temporary_buffer.data()) == 0)
+    FileHandle file = open_file(
+        target,
+        GENERIC_READ | GENERIC_WRITE,
+        0,
+        OPEN_EXISTING,
+        FILE_ATTRIBUTE_NORMAL | FILE_FLAG_WRITE_THROUGH);
+
+    set_file_position(file.get(), PatchOffset);
+    std::array<unsigned char, OriginalBytes.size()> actual = {};
+    read_exact(file.get(), actual.data(), actual.size());
+    if (actual != OriginalBytes)
     {
-        throw_windows_error(L"임시 패치 파일 생성 실패");
+        throw AppError(std::wstring(TargetName) + L"의 패치 위치 원본 바이트가 예상과 다릅니다.");
     }
 
-    const std::filesystem::path temporary(temporary_buffer.data());
-    bool keep = false;
-    try
+    set_file_position(file.get(), PatchOffset);
+    write_all(file.get(), PatchedBytes.data(), PatchedBytes.size());
+    if (!FlushFileBuffers(file.get()))
     {
-        FileHandle input = open_file(
-            source,
-            GENERIC_READ,
-            FILE_SHARE_READ,
-            OPEN_EXISTING,
-            FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN);
-        FileHandle output = open_file(
-            temporary,
-            GENERIC_READ | GENERIC_WRITE,
-            0,
-            TRUNCATE_EXISTING,
-            FILE_ATTRIBUTE_NORMAL | FILE_FLAG_WRITE_THROUGH);
-
-        std::vector<unsigned char> buffer(1024 * 1024);
-        for (;;)
-        {
-            DWORD bytes_read = 0;
-            if (!ReadFile(
-                    input.get(),
-                    buffer.data(),
-                    static_cast<DWORD>(buffer.size()),
-                    &bytes_read,
-                    nullptr))
-            {
-                throw_windows_error(L"패치 원본 읽기 실패");
-            }
-            if (bytes_read == 0)
-            {
-                break;
-            }
-            write_all(output.get(), buffer.data(), bytes_read);
-        }
-
-        set_file_position(output.get(), PatchOffset);
-        std::array<unsigned char, OriginalBytes.size()> actual = {};
-        read_exact(output.get(), actual.data(), actual.size());
-        if (actual != OriginalBytes)
-        {
-            throw AppError(std::wstring(TargetName) + L"의 패치 위치 원본 바이트가 예상과 다릅니다.");
-        }
-
-        set_file_position(output.get(), PatchOffset);
-        write_all(output.get(), PatchedBytes.data(), PatchedBytes.size());
-        if (!FlushFileBuffers(output.get()))
-        {
-            throw_windows_error(L"임시 패치 파일 저장 실패");
-        }
-        output.close();
-        input.close();
-
-        if (!fingerprint(temporary).matches(ExpectedSize, PatchedSha256))
-        {
-            throw AppError(L"임시 패치 파일이 예상 결과와 일치하지 않습니다.");
-        }
-        keep = true;
-        return temporary;
-    }
-    catch (...)
-    {
-        if (!keep)
-        {
-            try_delete(temporary);
-        }
-        throw;
-    }
-}
-
-void replace_target(
-    const std::filesystem::path& replacement,
-    const std::filesystem::path& target)
-{
-    if (!ReplaceFileW(
-            target.c_str(),
-            replacement.c_str(),
-            nullptr,
-            REPLACEFILE_IGNORE_MERGE_ERRORS,
-            nullptr,
-            nullptr))
-    {
-        throw_windows_error(
-            std::wstring(TargetName) +
-            L" 교체에 실패했습니다. 게임이 실행 중인지 확인해 주세요");
+        throw_windows_error(L"패치 결과 저장 실패");
     }
 }
 
@@ -724,17 +650,7 @@ void run(int argument_count, wchar_t* arguments[])
     ensure_backup(target, backup);
     std::wcout << L"[백업] " << BackupName << L'\n';
 
-    const std::filesystem::path temporary = create_patched_file(target, directory);
-    try
-    {
-        replace_target(temporary, target);
-    }
-    catch (...)
-    {
-        try_delete(temporary);
-        throw;
-    }
-    try_delete(temporary);
+    patch_in_place(target);
 
     const FileFingerprint final = fingerprint(target);
     if (!final.matches(ExpectedSize, PatchedSha256))
