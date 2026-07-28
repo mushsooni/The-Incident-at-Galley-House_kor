@@ -19,16 +19,20 @@
 
 namespace
 {
-constexpr std::wstring_view Version = L"1.0.0.1";
+constexpr std::wstring_view Version = L"1.0.1.0";
 constexpr std::wstring_view ProductName = L"GalleyHouse IME EXE Patcher";
 constexpr std::wstring_view TargetName = L"galleyhouse.exe";
 constexpr std::wstring_view BackupName = L"galleyhouse.exe.backup";
-constexpr std::uint64_t ExpectedSize = 104534016;
+constexpr std::wstring_view PreviousBackupName = L"galleyhouse.exe.backup.24297351";
+constexpr std::uint64_t ExpectedSize = 104549664;
+constexpr std::uint64_t PreviousExpectedSize = 104534016;
 constexpr std::uint64_t PatchOffset = 0x2510F;
 constexpr std::wstring_view OriginalSha256 =
-    L"66A57A2033E0A7BC9418C45EE4DD32678DB62F00A2D76485172FCBD894BD37A5";
+    L"5B24095A3B83005FD8C114E628EA7377D0D288010534C9F64EDF8E9375176C37";
 constexpr std::wstring_view PatchedSha256 =
-    L"9996BF1F5C715570BD066CF91ADCE5AE6AE8DDCE5129E661E8E169D4FC06E54F";
+    L"499A37B212DB7EC9ED4FB793DC5E529E211E73FDC1FB5D9E2D8F125FC2C6889B";
+constexpr std::wstring_view PreviousOriginalSha256 =
+    L"66A57A2033E0A7BC9418C45EE4DD32678DB62F00A2D76485172FCBD894BD37A5";
 
 constexpr std::array<unsigned char, 20> OriginalBytes = {
     0x31, 0xD2, 0xE8, 0x62, 0xD3, 0x1D, 0x03, 0xFF, 0x15, 0xFC,
@@ -466,13 +470,45 @@ void ensure_backup(
 {
     if (file_exists(backup))
     {
-        if (!fingerprint(backup).matches(ExpectedSize, OriginalSha256))
+        const FileFingerprint existing = fingerprint(backup);
+        if (existing.matches(ExpectedSize, OriginalSha256))
+        {
+            return;
+        }
+        if (!existing.matches(PreviousExpectedSize, PreviousOriginalSha256))
         {
             throw AppError(
                 L"기존 " + std::wstring(BackupName) +
-                L"가 지원 원본과 일치하지 않아 덮어쓰지 않습니다.");
+                L"가 현재 또는 이전 지원 원본과 일치하지 않아 덮어쓰지 않습니다.");
         }
-        return;
+
+        const std::filesystem::path previous_backup =
+            backup.parent_path() / PreviousBackupName;
+        if (file_exists(previous_backup))
+        {
+            if (!fingerprint(previous_backup).matches(
+                    PreviousExpectedSize,
+                    PreviousOriginalSha256))
+            {
+                throw AppError(
+                    L"기존 " + std::wstring(PreviousBackupName) +
+                    L"가 이전 지원 원본과 일치하지 않아 덮어쓰지 않습니다.");
+            }
+            if (!DeleteFileW(backup.c_str()))
+            {
+                throw_windows_error(
+                    std::wstring(BackupName) + L" 이전본 정리 실패");
+            }
+        }
+        else if (!MoveFileExW(
+                     backup.c_str(),
+                     previous_backup.c_str(),
+                     MOVEFILE_WRITE_THROUGH))
+        {
+            throw_windows_error(
+                std::wstring(BackupName) + L" 이전본 보존 실패");
+        }
+        std::wcout << L"[보존] " << PreviousBackupName << L'\n';
     }
 
     bool created = false;
