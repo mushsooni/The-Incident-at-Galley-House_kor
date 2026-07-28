@@ -59,7 +59,7 @@
 
 ### 사용된 폰트
 
-**Noto Serif Korean** (SemiBold, Black)  
+**Noto Serif Korean** (SemiBold, Bold, Black)  
 Copyright 2012 Google Inc. All Rights Reserved.  
 https://fonts.google.com/noto/specimen/Noto+Serif+KR
 
