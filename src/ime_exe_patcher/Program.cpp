@@ -19,20 +19,36 @@
 
 namespace
 {
-constexpr std::wstring_view Version = L"1.0.1.0";
+constexpr std::wstring_view Version = L"1.0.2.0";
 constexpr std::wstring_view ProductName = L"GalleyHouse IME EXE Patcher";
 constexpr std::wstring_view TargetName = L"galleyhouse.exe";
 constexpr std::wstring_view BackupName = L"galleyhouse.exe.backup";
-constexpr std::wstring_view PreviousBackupName = L"galleyhouse.exe.backup.24297351";
 constexpr std::uint64_t ExpectedSize = 104549664;
-constexpr std::uint64_t PreviousExpectedSize = 104534016;
 constexpr std::uint64_t PatchOffset = 0x2510F;
 constexpr std::wstring_view OriginalSha256 =
-    L"5B24095A3B83005FD8C114E628EA7377D0D288010534C9F64EDF8E9375176C37";
+    L"692B5C76DBAAB6F5235FC2F0BC25DE9629ED6661FFDF3D1EB5550A5D3E9AD6E4";
 constexpr std::wstring_view PatchedSha256 =
-    L"499A37B212DB7EC9ED4FB793DC5E529E211E73FDC1FB5D9E2D8F125FC2C6889B";
-constexpr std::wstring_view PreviousOriginalSha256 =
-    L"66A57A2033E0A7BC9418C45EE4DD32678DB62F00A2D76485172FCBD894BD37A5";
+    L"A050C2A735457DF8F3BC10D222128B4B32754A1540F4E8455D70B37F05F2EE98";
+
+struct PreviousBuild
+{
+    std::wstring_view backup_name;
+    std::uint64_t size;
+    std::wstring_view sha256;
+};
+
+constexpr std::array<PreviousBuild, 2> PreviousBuilds = {{
+    {
+        L"galleyhouse.exe.backup.24434056",
+        104549664,
+        L"5B24095A3B83005FD8C114E628EA7377D0D288010534C9F64EDF8E9375176C37",
+    },
+    {
+        L"galleyhouse.exe.backup.24297351",
+        104534016,
+        L"66A57A2033E0A7BC9418C45EE4DD32678DB62F00A2D76485172FCBD894BD37A5",
+    },
+}};
 
 constexpr std::array<unsigned char, 20> OriginalBytes = {
     0x31, 0xD2, 0xE8, 0x62, 0xD3, 0x1D, 0x03, 0xFF, 0x15, 0xFC,
@@ -475,23 +491,32 @@ void ensure_backup(
         {
             return;
         }
-        if (!existing.matches(PreviousExpectedSize, PreviousOriginalSha256))
+        const PreviousBuild* previous_build = nullptr;
+        for (const PreviousBuild& candidate : PreviousBuilds)
+        {
+            if (existing.matches(candidate.size, candidate.sha256))
+            {
+                previous_build = &candidate;
+                break;
+            }
+        }
+        if (previous_build == nullptr)
         {
             throw AppError(
                 L"기존 " + std::wstring(BackupName) +
-                L"가 현재 또는 이전 지원 원본과 일치하지 않아 덮어쓰지 않습니다.");
+                L"가 현재 또는 알려진 이전 지원 원본과 일치하지 않아 덮어쓰지 않습니다.");
         }
 
         const std::filesystem::path previous_backup =
-            backup.parent_path() / PreviousBackupName;
+            backup.parent_path() / previous_build->backup_name;
         if (file_exists(previous_backup))
         {
             if (!fingerprint(previous_backup).matches(
-                    PreviousExpectedSize,
-                    PreviousOriginalSha256))
+                    previous_build->size,
+                    previous_build->sha256))
             {
                 throw AppError(
-                    L"기존 " + std::wstring(PreviousBackupName) +
+                    L"기존 " + std::wstring(previous_build->backup_name) +
                     L"가 이전 지원 원본과 일치하지 않아 덮어쓰지 않습니다.");
             }
             if (!DeleteFileW(backup.c_str()))
@@ -508,7 +533,7 @@ void ensure_backup(
             throw_windows_error(
                 std::wstring(BackupName) + L" 이전본 보존 실패");
         }
-        std::wcout << L"[보존] " << PreviousBackupName << L'\n';
+        std::wcout << L"[보존] " << previous_build->backup_name << L'\n';
     }
 
     bool created = false;
