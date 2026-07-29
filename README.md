@@ -1,15 +1,15 @@
 # The Incident at Galley House 한글패치 (베타 버전)
-(최신 릴리즈: 26-07-28 00:10)
+(최신 릴리즈: 26-07-29 11:35)
 - 스팀 게임 [**The Incident at Galley House**](https://store.steampowered.com/app/3641000) (갤리 저택 사건)의 유저 한글패치입니다.  
 - AI 번역으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고 바랍니다.
 
 ### 다운로드
-- [최신 릴리즈](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest)에서 `Galley-House_KO_{버전명}.zip`과 `GalleyHouse_IME_EXE_Patcher.exe` 다운로드
+- [최신 릴리즈](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest)에서 `Galley-House_KO_{버전명}.zip`과 `GalleyHouse_IME_EXE_Patcher_{버전명}.exe` 다운로드
 
 ### 패치 방법
 1. `zip` 파일의 압축을 풀고, `galleyhouse.pck` 파일을 게임 폴더에 **덮어쓰기**  
    (게임 폴더: 스팀 라이브러리 - 게임명 우클릭 - `관리` - `로컬 파일 탐색`)
-2. **(선택)** `GalleyHouse_IME_EXE_Patcher.exe`를 게임 폴더에 놓고 실행  
+2. **(선택)** `GalleyHouse_IME_EXE_Patcher_{버전명}.exe`를 게임 폴더에 놓고 실행  
    `Windows의 PC 보호` 창이 뜨는 경우 `추가 정보` - `실행` 클릭
 3. 게임 실행 후 `Settings` - `language`를 `한국어`로 변경
 4. 게임의 안내에 따라 **게임 재실행**
@@ -31,8 +31,8 @@
 해당 이슈는 한글 입력을 처리하는 게임 엔진 상의 버그로 추정됩니다. `GalleyHouse_IME_EXE_Patcher.exe`는 해당 문제를 수정하는 EXE 패처입니다.
 
 ### 게임 원본 빌드
-- **기준일**: 한국시간 26-07-20 23:37:40
-- **App ID**: 3641000 / **Depot ID**: 3641001 / **Build ID**: 24297351 / **Manifest ID**: 7260128677984138539
+- **기준일**: 한국시간 26-07-29 02:53:17
+- **App ID**: 3641000 / **Depot ID**: 3641001 / **Manifest ID**: 5855384945011288863 / **Build ID**: 24437151
 
 ### 문의, 제보
 - **배포 안내글**: https://gall.dcinside.com/indiegame/448576
@@ -54,6 +54,7 @@
 - 2026-07-23 [v0.4.1] 이미지 다수 한글화, 튜토리얼 번역 검수, 일부 용어 수정
 - 2026-07-25 [v0.4.2] 초반 장면 번역 검수, 용어 및 인물 간 말투 일부 수정, 이미지 다수 한글화
 - 2026-07-28 [v0.5] IME 버그 수정, 번역 검수, 이미지 한글화
+- 2026-07-29 [v0.6] 게임 업데이트 대응, 폰트 자간 수정, 번역 검수
 
 자세한 변경 사항 및 진행도는 [Releases](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases)를 참고 바랍니다.
 
