@@ -19,16 +19,16 @@
 
 namespace
 {
-constexpr std::wstring_view Version = L"1.0.2.0";
+constexpr std::wstring_view Version = L"1.0.3.0";
 constexpr std::wstring_view ProductName = L"GalleyHouse IME EXE Patcher";
 constexpr std::wstring_view TargetName = L"galleyhouse.exe";
 constexpr std::wstring_view BackupName = L"galleyhouse.exe.backup";
 constexpr std::uint64_t ExpectedSize = 104549664;
 constexpr std::uint64_t PatchOffset = 0x2510F;
 constexpr std::wstring_view OriginalSha256 =
-    L"692B5C76DBAAB6F5235FC2F0BC25DE9629ED6661FFDF3D1EB5550A5D3E9AD6E4";
+    L"7ABCFAF3607AC4AB2F8FEE32F16C393EE7E700D070FA5B6B18C5EBCB1F8B7F46";
 constexpr std::wstring_view PatchedSha256 =
-    L"A050C2A735457DF8F3BC10D222128B4B32754A1540F4E8455D70B37F05F2EE98";
+    L"4FE6817F6D666AF42215286953A1BFC83128C5DAD43F903055982ECF416D95BB";
 
 struct PreviousBuild
 {
@@ -37,7 +37,12 @@ struct PreviousBuild
     std::wstring_view sha256;
 };
 
-constexpr std::array<PreviousBuild, 2> PreviousBuilds = {{
+constexpr std::array<PreviousBuild, 3> PreviousBuilds = {{
+    {
+        L"galleyhouse.exe.backup.24437151",
+        104549664,
+        L"692B5C76DBAAB6F5235FC2F0BC25DE9629ED6661FFDF3D1EB5550A5D3E9AD6E4",
+    },
     {
         L"galleyhouse.exe.backup.24434056",
         104549664,

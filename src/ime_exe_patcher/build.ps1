@@ -42,7 +42,7 @@ $source = Join-Path $PSScriptRoot "Program.cpp"
 $resourceSource = Join-Path $PSScriptRoot "version.rc"
 $resource = Join-Path $build "version.res"
 $object = Join-Path $build "Program.obj"
-$output = Join-Path $dist "GalleyHouse_IME_EXE_Patcher_v1.0.2.0.exe"
+$output = Join-Path $dist "GalleyHouse_IME_EXE_Patcher_v1.0.3.0.exe"
 
 New-Item -Path $build -ItemType Directory -Force | Out-Null
 New-Item -Path $dist -ItemType Directory -Force | Out-Null
