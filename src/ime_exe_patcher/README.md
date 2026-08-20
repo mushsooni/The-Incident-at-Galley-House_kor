@@ -1,6 +1,6 @@
 # GalleyHouse IME EXE Patcher
 
-수첩을 닫은 직후 첫 입력의 KEYUP이 누락되는 문제를 수정하는 Windows x64 네이티브 EXE 패처입니다.
+입력창을 닫은 직후 첫 입력의 KEYUP이 누락되는 문제를 수정하는 Windows x64 네이티브 EXE 패처입니다.
 
 ## 사용법
 
