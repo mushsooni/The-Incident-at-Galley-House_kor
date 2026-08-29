@@ -29,7 +29,7 @@
 <details>
 <summary>도전과제 관련 (스포 방지)</summary>
 
-- `TYPE HE-L-P` 도전과제 달성을 위해서는, **수동 보정** 기능을 이용해 장면 코드 `**-*-H-E-L-P`를 장치에 입력하면 됩니다. ([스팀 토론](https://steamcommunity.com/app/3641000/discussions/0/570417860284873056/) 참고)  
+- `TYPE HE-L-P` 도전과제 달성을 위해서는 장면 코드 `**-*-H-E-L-P`를 장치에 입력하면 됩니다. ([스팀 토론](https://steamcommunity.com/app/3641000/discussions/0/570417860284873056/) 참고)  
   해당 방법은 게임 진행 상황과 무관하게 언제든 사용 가능합니다.
 </details>
 
