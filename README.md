@@ -1,7 +1,6 @@
-# The Incident at Galley House 한글패치 (베타 버전)
-(최신 릴리즈: 26-08-29 13:10)
-- 스팀 게임 [**The Incident at Galley House**](https://store.steampowered.com/app/3641000) (갤리 저택 사건)의 유저 한글패치입니다.  
-- AI 번역으로 우선 배포 후, 손번역으로 텍스트 및 이미지 교체 작업 중에 있습니다. 자세한 내용은 **주요 안내 사항** 및 **업데이트 내역**을 참고 바랍니다.
+# The Incident at Galley House 한글패치
+(최신 릴리즈: 26-09-08 00:40)
+- 스팀 게임 [**The Incident at Galley House**](https://store.steampowered.com/app/3641000) (갤리 저택 사건)의 유저 한글패치입니다.
 
 ## 다운로드
 - [최신 릴리즈](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases/latest)에서 `Galley-House_KO_{버전명}.zip`과 `GalleyHouse_IME_EXE_Patcher_{버전명}.exe` 다운로드
@@ -20,20 +19,14 @@
   자세한 설명은 하단의 **알려진 문제** 및 [src/ime_exe_patcher](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/tree/main/src/ime_exe_patcher)를 참고하시기 바랍니다.
 - 게임 업데이트 시 한글패치가 풀리고 중국어로 출력될 수 있습니다.  
   `galleyhouse.pck` 파일을 **다시 덮어씌우면** 한국어로 복원되지만, 게임의 업데이트 내역은 반영되지 않을 수 있습니다.
-- 현재 게임 후반부에는 AI 번역이 적용되어 번역의 질이 다소 미흡할 수 있습니다.  
-  26년 9월 중에 모두 **손번역**으로 교체될 예정입니다.
-- 현재 게임 후반부의 일부 이미지는 영어로 출력됩니다. 게임 내 오버레이 자막 기능을 사용하시기 바랍니다.  
-  손번역 일정에 맞추어 한국어 이미지로 교체 작업 중에 있습니다.
-- 이 게임은 키보드&마우스와 컨트롤러 사이에 플레이 경험 상 다소 차이가 있습니다.  
-  본 패치는 v0.8 이후로 컨트롤러 플레이를 완벽 지원합니다.
 <details>
-<summary>도전과제 관련 (스포 방지)</summary>
+<summary>도전과제 관련 (스포)</summary>
 
 - `TYPE HE-L-P` 도전과제 달성을 위해서는 장면 코드 `**-*-H-E-L-P`를 장치에 입력하면 됩니다. ([스팀 토론](https://steamcommunity.com/app/3641000/discussions/0/570417860284873056/) 참고)  
   해당 방법은 게임 진행 상황과 무관하게 언제든 사용 가능합니다.
 </details>
 
-## ★ 알려진 문제 ★
+## 알려진 문제
 - 한글 입력 중에 입력창을 닫고 방향키를 누르면 **이동 입력이 유지**되는 버그가 있습니다.  
   같은 방향키를 **다시 누르면** 문제 증상을 멈출 수 있습니다.
 
@@ -69,9 +62,10 @@
 - 2026-08-06 [v0.7.2] 용어 및 인명 수정, 이미지 한글화, 기타 번역 검수
 - 2026-08-12 [v0.7.3] IME 버그 추가 수정, 수동 보정 한글 입력 차단, 인자 노출 문제 수정, 모니터 폰트 수정, 이미지 한글화, 기타 번역 검수
 - 2026-08-20 [v0.7.4] 한국어 조사 코드 수정, 이미지 한글화, 기타 번역 검수
-- 2026-08-29 [v0.8] ■■ 코드 한글화, 컨트롤러용 ■■ 코드 입력창 구현, 컨트롤러용 자판 한글화, 모니터 폰트 글리프 보강, 수첩 폰트를 모든 언어에 적용, 기타 폰트 수정, 기타 번역 검수
+- 2026-08-29 [v0.8] ■■ 코드 한글화, 컨트롤러용 자판 한글화, 모니터 폰트 글리프 보강, 수첩 폰트를 모든 언어에 적용, 기타 폰트 수정, 기타 번역 검수
+- 2026-09-08 [v1.0] **정식 버전 공개**: 전 분량 검수 완료, 이미지 한글화 완료, 맞춤법 수정, 기타 폰트 수정
 
-자세한 변경 사항 및 진행도는 [Releases](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases)를 참고 바랍니다.
+자세한 변경 사항은 [Releases](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/releases)를 참고 바랍니다.
 
 ## 사용된 폰트
 
@@ -109,7 +103,9 @@
 
 - [**DX일급비밀**](https://www.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000245&pageNm=font) Medium ([License](https://www.dxkorea.co.kr/main/html.php?htmid=/service/freefont.html))
 
-- [**DX활판명조**](https://www.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000042&pageNm=font) Medium, Bold ([License](https://www.dxkorea.co.kr/main/html.php?htmid=/service/freefont.html)) 
+- [**DX활판명조**](https://www.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000042&pageNm=font) Medium, Bold ([License](https://www.dxkorea.co.kr/main/html.php?htmid=/service/freefont.html))
+
+- [**Fusion Pixel Font**](https://fusion-pixel-font.takwolf.com/) 10px Prop ko
 
 - [**Galmuri7**](https://quiple.dev/font/galmuri)
 
