@@ -18,7 +18,7 @@
 - `GalleyHouse_IME_EXE_Patcher.exe`는 **이동 입력 유지 버그** 관련 코드를 수정하는 패처입니다.  
   자세한 설명은 하단의 **알려진 문제** 및 [src/ime_exe_patcher](https://github.com/mushsooni/The-Incident-at-Galley-House_kor/tree/main/src/ime_exe_patcher)를 참고하시기 바랍니다.
 - 게임 업데이트 시 한글패치가 풀리고 중국어로 출력될 수 있습니다.  
-  `galleyhouse.pck` 파일을 **다시 덮어씌우면** 한국어로 복원되지만, 게임의 업데이트 내역은 반영되지 않을 수 있습니다.
+  `galleyhouse.pck` 파일을 **다시 덮어씌우면** 한국어로 복원되지만, 게임의 업데이트 내용은 반영되지 않을 수 있습니다.
 - 영어 외의 언어에서 달성 방법이 달라지는 **도전과제**가 있습니다. 아래 설명을 참고해 주세요.
 <details>
 <summary>도전과제 관련 (스포)</summary>
