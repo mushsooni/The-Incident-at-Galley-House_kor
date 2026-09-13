@@ -73,12 +73,12 @@
 
 - [**Noto Serif Korean**](https://fonts.google.com/noto/specimen/Noto+Serif+KR) Light, SemiBold, Bold, Black
 
-- [**KCC방정환체**](https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023)
-
 - [**전기안전체**](https://kesco.or.kr/bbs/pr/selectBbs.do?bbs_code=PRB00012&bbs_seq=167561) Medium  
 본 저작물은 '한국전기안전공사'에서 '2024년' 작성하여 공공누리 제1유형으로 개방한 '전기안전체'를 이용하였으며, 해당 저작물은 '전기안전 홍보센터'에서 무료로 다운받으실 수 있습니다.
 
 - [**이사만루체**](https://www.gonggames.com/#csr) Light
+
+- [**KCC방정환체**](https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023)
 
 - [**온글잎 강동희**](https://www.ownglyph.com/trial/d318ba11-71ec-4c8c-a5de-55fa37373862)
 
